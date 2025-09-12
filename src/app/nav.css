@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+.nav {
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  transition: all 0.3s ease-in-out;
+  padding: 0 50px;
+}
+
+/* ✅ Glass effect applied when scrolled */
+.nav.glass {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  padding-right: 90px;
+  gap: 100px;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.links a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.link3{
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.link3 a{
+  color: black;
+}
+
+.link3 img{
+  width: 15px;
+  height: 15px;
+  margin-left: 10px;
+  object-fit: cover;
+}
