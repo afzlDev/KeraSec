@@ -12,14 +12,14 @@ import wtsp from '../../../public/whatsapp.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function ContactPage({id}) {
+export default function ContactPage({ id }) {
   const rootRef = useRef(null);
   const h1Ref = useRef(null);
   const h2Ref = useRef(null);
 
   useLayoutEffect(() => {
     let ctx;
-    // Wait for fonts so ScrollTrigger gets correct measurements (avoids jump)
+
     const startGSAP = () => {
       ctx = gsap.context(() => {
         const tl = gsap.timeline({
@@ -29,25 +29,26 @@ export default function ContactPage({id}) {
             end: 'bottom 60%',
             toggleActions: 'play none none reverse',
             invalidateOnRefresh: true,
-            // markers: true,
           },
         });
 
-        // We use fromTo to guarantee stable start/end values (no inference flicker)
+        // CONTACT slides in from full left (screen width)
         tl.fromTo(
           h1Ref.current,
-          { xPercent: -100, autoAlpha: 0, force3D: true },
-          { xPercent: 0, autoAlpha: 1, duration: 0.8, ease: 'power3.out' }
+          { x: '-100vw', autoAlpha: 0 },
+          { x: '0vw', autoAlpha: 1, duration: 0.8, ease: 'power3.out' }
         )
+          // US slides in from full right (screen width)
           .fromTo(
             h2Ref.current,
-            { xPercent: 100, autoAlpha: 0, force3D: true },
-            { xPercent: 0, autoAlpha: 1, duration: 0.8, ease: 'power3.out' },
+            { x: '100vw', autoAlpha: 0 },
+            { x: '0vw', autoAlpha: 1, duration: 0.8, ease: 'power3.out' },
             '-=0.6'
           )
+          // Social icons fade+pop in
           .fromTo(
             gsap.utils.toArray<HTMLAnchorElement>('.socials a'),
-            { autoAlpha: 0, y: 40, scale: 0.8, force3D: true },
+            { autoAlpha: 0, y: 40, scale: 0.8 },
             {
               autoAlpha: 1,
               y: 0,
@@ -55,26 +56,22 @@ export default function ContactPage({id}) {
               duration: 0.6,
               stagger: 0.15,
               ease: 'back.out(1.7)',
-              clearProps: 'transform',
             },
             '-=0.4'
           );
       }, rootRef);
 
-      // Extra safety: refresh after everything laid out
+      // Refresh ScrollTrigger after layout
       requestAnimationFrame(() => ScrollTrigger.refresh());
     };
 
-    // If font loading is supported, wait; otherwise start immediately.
     if (document?.fonts?.ready) {
       document.fonts.ready.then(startGSAP);
     } else {
       startGSAP();
     }
 
-    return () => {
-      ctx?.revert();
-    };
+    return () => ctx?.revert();
   }, []);
 
   return (
