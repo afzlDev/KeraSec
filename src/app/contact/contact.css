@@ -83,18 +83,20 @@
 
   .contact_h1,
   .contact_h2 {
-    font-size: 15vw;
-    /* Responsive font size */
+    font-size: 18vw;
+    /* Increased from 15vw */
     line-height: 1;
   }
 
   .socials {
-    gap: 30px;
+    gap: 25px;
     margin-top: 40px;
   }
 
   .socials a {
-    width: 40px;
-    height: 40px;
+    width: 55px;
+    /* Increased from 40px */
+    height: 55px;
+    /* Increased from 40px */
   }
 }

@@ -23,14 +23,14 @@ export default function Nav() {
       <div className="logo"><a href="#home">KeraSec</a></div>
       <div className="links">
         <div className="link1">
-          <a href="#home">HOME</a>
+          <a href="/home">HOME</a>
         </div>
         <div className="link2">
-          <a href="#contact">CONTACT</a>
+          <a href="/contact">CONTACT</a>
         </div>
         <div className="link3">
           <Link href="/shop">SHOP</Link>
-          <Image src={arw} alt="arrow"/>
+          <Image src={arw} alt="arrow" />
         </div>
       </div>
     </div>

@@ -61,12 +61,12 @@ canvas {
 /* Responsive Styles */
 @media (max-width: 768px) {
   .hero_text {
-    font-size: 8vw;
-    /* Responsive font size */
+    font-size: 10vw;
+    /* Increased from 8vw */
     white-space: normal;
     /* Allow wrapping */
     width: 90%;
-    line-height: 1.2;
+    line-height: 1.1;
   }
 
   .hero_text2 {
@@ -77,7 +77,7 @@ canvas {
   }
 
   .hero_text2 span {
-    font-size: 16px !important;
-    /* Override inline styles if needed */
+    font-size: 18px !important;
+    /* Increased from 16px */
   }
 }

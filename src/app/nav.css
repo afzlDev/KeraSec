@@ -75,35 +75,40 @@
 /* Responsive Styles */
 @media (max-width: 768px) {
   .nav {
-    padding: 0 20px;
-    height: 60px;
-    background: rgba(0, 0, 0, 0.8);
+    padding: 0 30px;
+    height: 70px;
+    background: rgba(0, 0, 0, 0.85);
     /* Ensure readable against background */
   }
 
   .links {
     padding-right: 0;
-    gap: 20px;
-    font-size: 12px;
+    gap: 25px;
+    font-size: 15px;
   }
 
   .logo {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   /* Adjust link visibility or style if needed for very small screens */
   @media (max-width: 480px) {
+    .nav {
+      padding: 0 15px;
+    }
+
     .links {
       gap: 15px;
+      font-size: 14px;
     }
 
     .link3 {
-      padding: 3px 8px;
+      padding: 6px 12px;
     }
 
     .link3 img {
-      width: 12px;
-      height: 12px;
+      width: 14px;
+      height: 14px;
     }
   }
 }

@@ -14,14 +14,14 @@ import AboutUs from "./aboutus/page";
 export default function Page() {
   return (
     <Providers>
-    <ParallaxProvider>
-    <div className={styles.root}>
-      <Nav/>
-      <Home id='home'/>
-      <ContactPage id="contact"/>
-      <AboutUs/>
-    </div>
-    </ParallaxProvider>
+      <ParallaxProvider>
+        <div className={styles.root}>
+          <Nav />
+          <Home id='home' />
+          <ContactPage id="contact" />
+          <AboutUs />
+        </div>
+      </ParallaxProvider>
     </Providers>
   );
 }
