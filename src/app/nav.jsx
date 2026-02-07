@@ -20,7 +20,7 @@ export default function Nav() {
 
   return (
     <div className={`nav ${isScrolled ? "glass" : ""}`}>
-      <div className="logo"><a href="#home">KeraSec</a></div>
+      <div className="logo"><a href="/home">KeraSec</a></div>
       <div className="links">
         <div className="link1">
           <a href="/home">HOME</a>
